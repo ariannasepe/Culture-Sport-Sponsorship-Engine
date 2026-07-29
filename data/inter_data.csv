@@ -1,0 +1,20 @@
+variabile,valore,fonte
+hospitality_capacity,2900.0,"Stima da progetto ristrutturazione San Siro (WeBuild), posti premium attuali"
+relationship_hospitality,48.0,Non pubblicato dal club (varia per settore/abbonamento) - da stimare come scenario ipotetico
+stadium_attendance,73020.0,Transfermarkt
+venue_utilization_rate,0.96,Calcolo
+tv_audience,39648492.0,calcioefinanza.it
+digital_reach,87000000.0,Social Media
+total_fanbase,4100000.0,Ipsos
+prestige,0.64,"Calcolo (48 trofei Inter / 75 trofei Juventus, riferimento)"
+sporting_competitiveness,0.98,Calcolo (media posizioni Serie A 2023/24-2024/25)
+performance_continuity,0.96,Calcolo (media posizioni Serie A 2020/21-2024/25)
+brand_fit,0.8,"Stima (scenario ipotetico sponsor BBVA, Main Partner)"
+exclusivity,0.9,"Stima (scenario ipotetico sponsor BBVA, esclusiva categoria bancaria)"
+sponsorable_assets_count,5.0,Firecrawl (hospitality.inter.it + inter.it/it/club/partners)
+audience_reach,40000000.0,Stima (arrotondamento dell'audience cumulata TV)
+audience_quality,0.75,Stima (fanbase di club prestigioso e internazionale)
+engagement,0.05,"Stima (parte alta dei benchmark generali di settore, 1-5%)"
+visibility_exposure,50000000.0,"Stima (ordine di grandezza plausibile per un top club, TV + digital)"
+social_engagement,0.03,Stima (benchmark generale per account social molto grandi)
+activation_potential,0.6,"Stima (scenario ipotetico sponsor BBVA, Main Partner, non esclusiva su tutte le categorie)"
