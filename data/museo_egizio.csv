@@ -1,0 +1,20 @@
+variabile,valore,fonte
+audience_reach,128000,IG
+audience_quality,0.65,Stima
+engagement,0.03,"Benchmark di settore per musei/cultura (2-4% tipico), non misurato direttamente"
+visibility_exposure,2000000,Stima
+brand_fit,0.55,Stima
+exclusivity,0.55,Stima
+prestige,0.75,Stima
+activation_potential,0.55,Stima
+relationship_hospitality,2400,"2 eventi privati al mese (24/anno) × 100 posti"
+total_visitors,1273354,Wikipedia
+unique_visitors,1150000,Stima al 90% di total_visitors (1.273.354)
+avg_dwell_time,100,"Stima in linea con musei di livello simile"
+num_events_exhibitions,1,Stima da sito ufficiale
+audience_profile_score,0.65,Stima
+tourist_audience_pct,0.6,Stima
+international_reach,0.7,Stima
+digital_engagement,0.03,Stima
+newsletter_crm_reach,45000,"Stima per un'istituzione di questa scala"
+experiential_activations,1560,Dato 2019
