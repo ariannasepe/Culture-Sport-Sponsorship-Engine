@@ -275,7 +275,6 @@ if uploaded_file is not None:
     if st.button("Genera valutazione", type="primary"):
         result = evaluate_property(property_name, sector, raw_data)
 
-        st.markdown('<div class="section-title">Risultato</div>', unsafe_allow_html=True)
 
         # genera il report HTML completo (con grafico) e lo mostra + rende scaricabile
         output_path = "output/report_streamlit.html"
