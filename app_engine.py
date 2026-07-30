@@ -277,43 +277,6 @@ if uploaded_file is not None:
 
         st.markdown('<div class="section-title">Risultato</div>', unsafe_allow_html=True)
 
-        # KPI: Total Market Value + 5 componenti, come .kpi-card della dashboard di riferimento
-        kpi_cols = st.columns(1 + len(result.components))
-        with kpi_cols[0]:
-            st.markdown(f"""
-            <div class="kpi-card">
-                <div class="top-bar" style="background:#25465D;"></div>
-                <div class="kpi-label">Total Market Value</div>
-                <div class="kpi-value" style="color:#25465D;">€ {result.total_market_value:,.0f}</div>
-                <div class="kpi-sub">{result.property_name} — {result.sector}</div>
-            </div>
-            """, unsafe_allow_html=True)
-        for col, c in zip(kpi_cols[1:], result.components):
-            color = COMPONENT_COLORS.get(c.key, "#25465D")
-            with col:
-                st.markdown(f"""
-                <div class="kpi-card">
-                    <div class="top-bar" style="background:{color};"></div>
-                    <div class="kpi-label">{c.label}</div>
-                    <div class="kpi-value" style="color:{color};">€ {c.final_value:,.0f}</div>
-                    <div class="kpi-sub">{c.value_share:.1f}% del totale</div>
-                </div>
-                """, unsafe_allow_html=True)
-
-        st.markdown('<div class="section-title">Breakdown dettagliato</div>', unsafe_allow_html=True)
-        breakdown_df = pd.DataFrame([
-            {
-                "Componente": c.label,
-                "Valore base (€)": round(c.base_value),
-                "Moltiplicatore": round(c.quality_multiplier, 2),
-                "Valore finale (€)": round(c.final_value),
-                "Value share (%)": round(c.value_share, 1),
-            }
-            for c in result.components
-        ])
-        render_table(breakdown_df)
-
-
         # genera il report HTML completo (con grafico) e lo mostra + rende scaricabile
         output_path = "output/report_streamlit.html"
         generate_report(result, output_path)
