@@ -150,7 +150,7 @@ section[data-testid="stSidebar"] [data-testid="stFileer"] small,
 section[data-testid="stSidebar"] [data-testid="stFileer"] span {
     color: #e8f4fb !important;
 }
-section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+section[data-testid="stSidebar"] [data-testid="stFileer"] button {
     background: white !important;
     color: #25465D !important;
     border: none !important;
@@ -170,15 +170,16 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     color: #F8F9FA !important;   
 }
 
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button {
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] > div {
+    display: flex !important;
     justify-content: center !important;
-    text-align: center !important;
-    font-weight: 700 !important;
+    align-items: center !important;
+    width: 100% !important;
 }
 
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button * {
-    text-align: center !important;
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
     font-weight: 700 !important;
+    text-align: center !important;
 }
 
 /* Header nativo Streamlit: nascosto, non ricolorato */
