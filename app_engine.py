@@ -269,6 +269,13 @@ div.stButton > button:hover, div.stDownloadButton > button:hover {
 [data-testid="stFileUploaderDropzone"] {
     background: #ffffff !important;
 }
+/* Colore del testo "Upload" nel file uploader della sidebar */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] *,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] button,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] label,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] p {
+    color: #ffffff !important;   /* ← cambia questo valore */
+}
 
 /* Expander (es. "Dati caricati"): stessa correzione */
 [data-testid="stExpander"] summary,
