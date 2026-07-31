@@ -141,13 +141,13 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup
 }
 
 /* Sidebar file er */
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+section[data-testid="stSidebar"] [data-testid="stFileerDropzone"] {
     background-color: rgba(255,255,255,0.06) !important;
     border: 1px dashed rgba(255,255,255,0.25) !important;
 }
-section[data-testid="stSidebar"] [data-testid="stFileUploader"] p,
-section[data-testid="stSidebar"] [data-testid="stFileUploader"] small,
-section[data-testid="stSidebar"] [data-testid="stFileUploader"] span {
+section[data-testid="stSidebar"] [data-testid="stFileer"] p,
+section[data-testid="stSidebar"] [data-testid="stFileer"] small,
+section[data-testid="stSidebar"] [data-testid="stFileer"] span {
     color: #e8f4fb !important;
 }
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
@@ -170,12 +170,13 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     color: #F8F9FA !important;   
 }
 
-/* Solo la parola Upload centrata e grassetto dentro il bottone bianco */
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] [data-testid="stBaseButton-secondary"],
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span {
-    display: block !important;
-    width: 100% !important;
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button {
+    justify-content: center !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button * {
     text-align: center !important;
     font-weight: 700 !important;
 }
