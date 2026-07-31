@@ -145,12 +145,15 @@ section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
     background-color: rgba(255,255,255,0.06) !important;
     border: 1px dashed rgba(255,255,255,0.25) !important;
 }
-section[data-testid="stSidebar"] [data-testid="stFileUploader"] * {
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] p,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] small,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] span {
     color: #e8f4fb !important;
 }
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    background: white !important;
     color: #25465D !important;
-    font-weight: 600 !important;
+    border: none !important;
 }
 section[data-testid="stSidebar"] code {
     background-color: rgba(255,255,255,0.15) !important;
