@@ -148,6 +148,14 @@ section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] * {
     color: #e8f4fb !important;
 }
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    color: #25465D !important;
+    font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] code {
+    background-color: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+}
 
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
