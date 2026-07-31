@@ -167,8 +167,9 @@ section[data-testid="stSidebar"] [data-testid="stIconMaterial"] {
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] p,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] label,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
-    color: #fffff !important;   /* ← cambia questo colore */
+    color: #F8F9FA !important;   
 }
+
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
