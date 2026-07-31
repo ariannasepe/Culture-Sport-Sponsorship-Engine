@@ -162,6 +162,13 @@ section[data-testid="stSidebar"] code {
 section[data-testid="stSidebar"] [data-testid="stIconMaterial"] {
     display: none !important;
 }
+
+/* Etichetta del file uploader nella sidebar */
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] p,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] label,
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
+    color: #FFD54F !important;   /* ← cambia questo colore */
+}
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
