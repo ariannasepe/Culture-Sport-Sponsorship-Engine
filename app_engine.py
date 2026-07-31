@@ -159,7 +159,9 @@ section[data-testid="stSidebar"] code {
     background-color: rgba(255,255,255,0.15) !important;
     color: #ffffff !important;
 }
-
+section[data-testid="stSidebar"] [data-testid="stIconMaterial"] {
+    display: none !important;
+}
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
