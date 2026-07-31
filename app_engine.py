@@ -140,7 +140,7 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup
     font-weight: 500 !important;
 }
 
-/* Sidebar file uploader */
+/* Sidebar file er */
 section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
     background-color: rgba(255,255,255,0.06) !important;
     border: 1px dashed rgba(255,255,255,0.25) !important;
@@ -170,16 +170,14 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     color: #F8F9FA !important;   
 }
 
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] > div {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+/* Solo la parola Upload centrata e grassetto dentro il bottone bianco */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] [data-testid="stBaseButton-secondary"],
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span {
+    display: block !important;
     width: 100% !important;
-}
-
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
-    font-weight: 700 !important;
     text-align: center !important;
+    font-weight: 700 !important;
 }
 
 /* Header nativo Streamlit: nascosto, non ricolorato */
