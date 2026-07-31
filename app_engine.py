@@ -170,20 +170,16 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     color: #F8F9FA !important;   
 }
 
-/* Testo "Upload" in grassetto e centrato */
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"],
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
-    text-align: center !important;
-    font-weight: 700 !important;   /* grassetto */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    text-align: center !important;
 }
 
-/* Forza anche il bottone interno */
-section[data-testid="stSidebar"] [data-testid="stFileUploader] button {
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
     font-weight: 700 !important;
     text-align: center !important;
-    width: 100% !important;
 }
 
 /* Header nativo Streamlit: nascosto, non ricolorato */
