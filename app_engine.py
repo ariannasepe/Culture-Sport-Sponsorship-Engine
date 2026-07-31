@@ -274,7 +274,7 @@ section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] *,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] button,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] label,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] p {
-    color: #ffffff !important;   /* ← cambia questo valore */
+    color: #25465D !important;   /* ← cambia questo valore */
 }
 
 /* Expander (es. "Dati caricati"): stessa correzione */
