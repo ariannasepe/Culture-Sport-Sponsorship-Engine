@@ -344,7 +344,7 @@ DEMO_DATASETS = {
     },
     "Cultura": {
         "Cultura (generico)": "data/cultura_demo.csv",
-        "Museo Egizio": "data/museo_egizio_data.csv",
+        "Museo Egizio Torino": "data/museo_egizio_data.csv",
     },
 }
 
