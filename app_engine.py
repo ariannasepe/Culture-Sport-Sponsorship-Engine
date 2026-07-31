@@ -85,6 +85,78 @@ html, body, [class*="css"] {
     background-color: #4FC3F7 !important;
 }
 
+/* ── Sidebar ── */
+section[data-testid="stSidebar"] > div:first-child {
+    background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.2);
+}
+section[data-testid="stSidebar"] * {
+    color: #e8f4fb !important;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
+}
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.15) !important;
+    margin: 1rem 0;
+}
+section[data-testid="stSidebar"] label {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+}
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] label {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+}
+
+/* Sidebar select (dataset demo) */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] > div > div {
+    background-color: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 8px !important;
+    color: #e8f4fb !important;
+}
+
+/* Sidebar radio (solo le opzioni, non l'etichetta "Sezione") */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] label {
+    background-color: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+    margin-bottom: 4px;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+/* Sidebar file uploader */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    background-color: rgba(255,255,255,0.06) !important;
+    border: 1px dashed rgba(255,255,255,0.25) !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] * {
+    color: #e8f4fb !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    color: #25465D !important;
+    font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] code {
+    background-color: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+}
+
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
@@ -249,21 +321,59 @@ with col1:
 with col2:
     sector = st.selectbox("Settore", options=["Sport", "Cultura"])
 
-uploaded_file = st.file_uploader(
-    "Carica il CSV (due colonne: variabile, valore)",
-    type=["csv"],
-)
+# ─────────────────────────────────────────────
+# SIDEBAR — SORGENTE DATI
+# ─────────────────────────────────────────────
+with st.sidebar:
+    st.markdown(f"""
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;margin-top:-1rem;">
+        {logo_tag(70, border_radius_full=True)}
+        <div>
+            <div style="font-size:1.2rem;font-weight:700;color:#fff;line-height:1.2;">
+                Culture & Sport Sponsorship Engine
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    st.markdown("---")
 
-st.caption("Il CSV deve avere due colonne intestate `variabile` e `valore`. "
-           "Le variabili non riconosciute vengono ignorate; quelle mancanti "
-           "vengono semplicemente escluse dal calcolo.")
+DEMO_DATASETS = {
+    "Sport": {
+        "Sport (generico)": "data/sport_demo.csv",
+        "Inter": "data/inter_data.csv",
+    },
+    "Cultura": {
+        "Cultura (generico)": "data/cultura_demo.csv",
+        "Museo Egizio": "data/museo_egizio_data.csv",
+    },
+}
+
+st.markdown('<span style="font-size:0.7rem;font-weight:700;letter-spacing:2.5px;'
+                'text-transform:uppercase;color:#fffff;">Sorgente dati</span>', unsafe_allow_html=True)
+section = st.sidebar.radio("Sezione", options=["Dati demo", "Carica CSV"], index=0)
+
+data_source = None
+if section == "Dati demo":
+    demo_options = list(DEMO_DATASETS[sector].keys())
+    demo_choice = st.sidebar.selectbox("Seleziona un dataset demo", options=demo_options, index=0)
+    data_source = DEMO_DATASETS[sector][demo_choice]
+else:
+    uploaded_file = st.sidebar.file_uploader(
+        "Carica il CSV (due colonne: variabile, valore)",
+        type=["csv"],
+    )
+    st.sidebar.caption("Il CSV deve avere due colonne intestate `variabile` e `valore`. "
+                        "Le variabili non riconosciute vengono ignorate; quelle mancanti "
+                        "vengono semplicemente escluse dal calcolo.")
+    if uploaded_file is not None:
+        data_source = uploaded_file
 
 # ─────────────────────────────────────────────
 # ELABORAZIONE
 # ─────────────────────────────────────────────
-if uploaded_file is not None:
+if data_source is not None:
     try:
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(data_source)
         raw_data = dict(zip(df["variabile"], df["valore"]))
     except Exception as e:
         st.error(f"Errore nella lettura del CSV: {e}")
@@ -300,4 +410,4 @@ if uploaded_file is not None:
 
         st.components.v1.html(html_content, height=1400, scrolling=True)
 else:
-    st.info("Carica un file CSV per iniziare.")
+    st.info("Seleziona un dataset demo o carica un file CSV per iniziare.")
