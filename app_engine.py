@@ -169,21 +169,6 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="st
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     color: #F8F9FA !important;   
 }
-/* Solo la parola "Upload" centrata e in grassetto */
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span,
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] p,
-section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] label {
-    font-weight: 700 !important;
-    text-align: center !important;
-    width: 100% !important;
-}
 
 /* Header nativo Streamlit: nascosto, non ricolorato */
 header[data-testid="stHeader"] { background: transparent !important; }
