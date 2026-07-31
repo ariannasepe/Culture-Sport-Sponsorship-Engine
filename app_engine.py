@@ -163,7 +163,7 @@ section[data-testid="stSidebar"] [data-testid="stIconMaterial"] {
     display: none !important;
 }
 
-/* Etichetta del file uploader nella sidebar */
+/* Etichetta del file er nella sidebar */
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] p,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] label,
 section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
